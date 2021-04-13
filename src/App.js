@@ -38,9 +38,8 @@ function App() {
           </Route>
         
         
-          <Route path="/groups/new">
-            <FormContainer/>
-          </Route>
+          <Route path="/groups/new" component={FormContainer} />
+          
           
         </Switch>
      </Router>
