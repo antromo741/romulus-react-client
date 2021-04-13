@@ -9,16 +9,21 @@ export default class IndexContainer extends Component {
     }
 
     componentDidMount() {
-        setTimeout(() => {
-            this.setState({
-                groups: [
-                    { name: 'Anthony'},
-                    { name: 'Romo' }
-                ],
-                loading: false,
-            })
-        },1000)
-
+      fetch('http://localhost:3001/groups', {
+          method: 'get',
+          headers: {
+              'Accept': 'application/json',
+              'contentType': 'application/json'
+          }
+      })
+      .then(res => res.json())
+      .then(groupsJson => {
+          console.log('groups', groupsJson)
+          this.setState({
+              groups: groupsJson,
+              loading: false
+          })
+      })
     }
 
     render() {

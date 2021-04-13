@@ -6,11 +6,11 @@ const List = ({ groups }) => {
         <>
         <h1>List</h1>
         <ul>
-        {groups.map((group) => (
-            <ListItem key={group.id} group={group} />
-        ))}
-         </ul>
-         </>
+            {groups.map((group) => (
+                <ListItem key={group.id} group={group} />
+            ))}
+        </ul>
+        </>
     )
 }
 export default List
