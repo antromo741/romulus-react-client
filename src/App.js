@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import IndexContainer from './containers/IndexContainer';
 import FormContainer from './containers/FormContainer';
+import NewEventContainer from './containers/NewEventContainer'
+import ShowContainer from './containers/ShowContainer'
 
 function App() {
   return (
@@ -32,15 +34,15 @@ function App() {
 
   {/*Here are our routes and where we place our components */}
         <Switch>
-        
           <Route exact path="/">
             <IndexContainer/>
           </Route>
         
-        
           <Route path="/groups/new" component={FormContainer} />
           
-          
+          <Route path="/groups/:groupId/events/new" component={NewEventContainer} />
+
+          <Route path="/groups/:groupId" component={ShowContainer} />
         </Switch>
      </Router>
     </div>

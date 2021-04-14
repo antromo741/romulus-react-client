@@ -1,9 +1,12 @@
 import React from 'react'
-const ListItem = ({ group}) => {
+import { Link } from 'react-router-dom'
+
+const ListItem = ({ group }) => {
     return (
         <li className="" key={group.id}>
-        {group.name}
+            <Link to={`/groups/${group.id}`}>{group.name}</Link>
         </li>
     )
 }
+
 export default ListItem
